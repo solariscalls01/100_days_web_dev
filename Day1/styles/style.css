@@ -7,7 +7,9 @@ body {
 }
 h1 {
   font-family: "Caveat", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #00ADB5
+  color: #00ADB5;
+  font-size: 50px;
+  border: 1px solid #3E54AC;
 }
 
 a {
