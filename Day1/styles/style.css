@@ -1,0 +1,35 @@
+html {
+  text-align: center;
+}
+
+body {
+    background-color: #EEEEEE;
+}
+h1 {
+  font-family: "Caveat", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #00ADB5
+}
+
+a {
+  color: rgb(167, 1, 78);
+  text-decoration: none;
+}
+
+/* Pseudo selectors using the :  */
+a:hover {
+  text-decoration: underline;
+  color: #00ADB5;
+}
+
+#first-p {
+  color: #393E46;
+  font-weight: bold;
+  font-size: 1.5em;
+  font-family: "Signika Negative", "sans-serif";
+}
+
+img {
+  border-radius: 90px;
+  width: 150px;
+  height: 150px;
+}
