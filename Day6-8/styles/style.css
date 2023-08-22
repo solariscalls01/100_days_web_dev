@@ -5,13 +5,17 @@ html {
 body {
   background-color: #eeeeee;
 }
-h1 {
+main {
   font-family: "Caveat", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #00adb5;
-  font-size: 50px;
+  font-size: 20px;
   border: 3px solid #3e54ac;
-  width: 750px;
-  margin: 32px auto 32px auto;
+  width: 800px;
+  margin: 200px auto 100px auto;
+  border-radius: 20px;
+  background-color: #ca6950;
+  padding-top: 100px;
+  box-shadow: 1px 2px 8px rgba(0,0,0,0.5);
 }
 
 /* #description  {
@@ -45,7 +49,7 @@ li:nth-child(odd) {
   color: rgb(167, 1, 78);
   text-decoration: none;
   padding: 10px 50px;
-  font-size: 20px;
+  font-size: 15px;
   background-color: #bface2;
   border-radius: 4px;
   border: 5px solid #ecf2ff;
@@ -58,10 +62,14 @@ a:hover {
   color: #00adb5;
 }
 
+a {
+  text-decoration: none;
+}
+
 #first-p {
   color: #393e46;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 45px;
   font-family: "Signika Negative", "sans-serif";
 }
 
@@ -69,6 +77,9 @@ img {
   border-radius: 90px;
   width: 150px;
   height: 150px;
+  margin-top: 50px;
+  margin-bottom: -280px;
+  border: 5px solid rgb(44,44,44);
 }
 
 ol {
@@ -76,7 +87,7 @@ ol {
   margin: 32px auto 0 auto;
   padding: 0;
 }
-li {
+/* li {
   color: #ecf2ff;
   list-style: none;
   margin: 32px;
@@ -84,4 +95,18 @@ li {
   padding: 20px;
   border-radius: 6px;
   box-shadow: 5px 10px 10px rgba(0,0,0, 0.3);
+} */
+
+main li {
+  list-style: none;
+  color: white;
+  display: inline;
+  font-size: 40px;
+  font-family: "Signika negative";
+}
+
+main h1 {
+  display: inline;
+  font-family: "Signika negative";
+  color: rgb(229, 255, 0)
 }
