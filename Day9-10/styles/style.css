@@ -1,0 +1,83 @@
+html {
+  background-color: rgb(244, 234, 255);
+}
+
+body header {
+  text-align: center;
+}
+
+img {
+  width: 300px;
+}
+
+h1 {
+  font-size: 50px;
+  font-family: "Roboto Serif", serif;
+  color: rgb(88, 49, 196);
+}
+
+main {
+  width: 50%;
+  margin: 5% auto;
+  border: 5px solid #917bc2;
+  background-color: #917bc2;
+  color: white;
+  text-align: left;
+  font-size: 1.2em;
+  font-family: "Ubuntu", sans-serif;
+  border-radius: 15px;
+  padding: 15px 15px 20px 30px;
+}
+
+li {
+  list-style: none;
+  padding-left: 10px;
+  padding: 5px;
+  border-left: 5px solid transparent;
+}
+
+footer {
+  text-align: center;
+  color: #8c7d98;
+  font-size: 1.1em;
+}
+
+footer p {
+  padding: 40px;
+}
+
+.MDN-reference {
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: rgb(255, 237, 177);
+  color: #5730ca;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  color: rgb(167, 108, 108);
+  background-color: rgb(255, 237, 177);
+}
+
+#PDF-link {
+  border-radius: 15px;
+  font-size: 25px;
+  background-color: #f9c927;
+  color: black;
+  padding: 15px;
+}
+
+#PDF-link:hover {
+  color: white;
+}
+
+.html-attr {
+  color: rgb(255, 237, 177);
+  border-left: 5px solid rgb(255, 237, 177);
+  padding-left: 5px;
+}
