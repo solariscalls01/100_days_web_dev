@@ -3,13 +3,17 @@ body {
   margin: 0;
 }
 
-#container {
-  /* width: 800px; */
+header {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 #page-logo a {
@@ -20,6 +24,8 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   text-shadow: 1px 1px 2px rgb(0, 0, 0);
+  position: relative;
+  z-index: 1;
 }
 
 header ul {
@@ -30,10 +36,10 @@ header ul {
 }
 
 header li {
-  /* width: 50%; */
   margin-left: 20px;
   padding: 15px 20px;
   text-align: right;
+  z-index: 2;
 }
 
 #hero {
@@ -41,6 +47,8 @@ header li {
   background-image: url(/Day15-20/images/places/ocean.jpg);
   background-position: center;
   background-size: cover;
+  position: relative;
+  box-sizing: border-box;
 }
 
 #hero-container {
@@ -52,13 +60,52 @@ header li {
   width: 700px;
   text-align: center;
   margin: 0px auto;
+  position: relative;
+  top: 30%;
+  left: auto;
+  right: auto;
+}
+
+#hero-container h1 {
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  font-size: 35px;
+  margin: 0;
+}
+
+#hero-container p {
+  color: white;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 250;
 }
 
 section div a {
   text-decoration: none;
   background-color: rgb(230, 226, 18);
   border-radius: 10px;
-  padding: 5px;
+  padding: 12px 24px;
   color: rgb(13, 137, 175);
   font-weight: 800;
+  font-size: 15px;
+  box-shadow: 2px 4px 8px rgb(68, 67, 67);
+}
+
+section div a:hover {
+  background-color: rgb(230, 250, 100);
+  font-size: 17px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(245, 243, 160);
+  border-radius: 6px;
+  font-size: 20px;
+  padding: 12px;
+}
+
+a:hover {
+  color: rgb(77, 77, 77);
+  background-color: rgb(255, 251, 0);
+  font-size: 21px;
 }
