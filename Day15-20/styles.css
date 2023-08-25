@@ -1,0 +1,64 @@
+body {
+  font-family: "Quicksand", sans-serif;
+  margin: 0;
+}
+
+#container {
+  /* width: 800px; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#page-logo a {
+  padding: 10px;
+  font-family: "Oleo Script", sans-serif;
+  color: rgb(245, 243, 160);
+  font-size: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgb(0, 0, 0);
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+header li {
+  /* width: 50%; */
+  margin-left: 20px;
+  padding: 15px 20px;
+  text-align: right;
+}
+
+#hero {
+  height: 800px;
+  background-image: url(/Day15-20/images/places/ocean.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+#hero-container {
+  background-color: rgba(51, 47, 47, 0.8);
+  box-shadow: 2px 4px 8px rgb(68, 67, 67);
+  color: white;
+  border-radius: 8px;
+  padding: 50px 0px;
+  width: 700px;
+  text-align: center;
+  margin: 0px auto;
+}
+
+section div a {
+  text-decoration: none;
+  background-color: rgb(230, 226, 18);
+  border-radius: 10px;
+  padding: 5px;
+  color: rgb(13, 137, 175);
+  font-weight: 800;
+}
