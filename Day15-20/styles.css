@@ -44,9 +44,10 @@ header li {
 
 #hero {
   height: 800px;
-  background-image: url(/Day15-20/images/places/ocean.jpg);
-  background-position: center;
-  background-size: cover;
+  background-image: url(/Day15-20/images/places/IMG_2161.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: right 15% bottom 30%;
   position: relative;
   box-sizing: border-box;
 }
@@ -104,8 +105,70 @@ a {
   padding: 12px;
 }
 
-a:hover {
+header a:hover {
   color: rgb(77, 77, 77);
   background-color: rgb(255, 251, 0);
   font-size: 21px;
 }
+
+/* Adding linear gradient; add the degree of the lighting and the two colors you want  */
+#highlights {
+  padding: 24px 24px;
+  background: linear-gradient(45deg, rgb(120, 187, 182), rgb(202, 243, 240));
+}
+
+#highlights h2{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  padding: 20px;
+  margin: 0px 0px 20px 0px;
+}
+
+#destinations {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 40px;
+  list-style:none;
+}
+
+.destination {
+  margin: 0px 20px;
+}
+
+.destination img {
+  height: 300px;
+  width: 100%;
+  box-shadow: 2px 4px 8px rgb(68, 67, 67);
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.destination p {
+  margin: 20px 0px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 24px;
+  color: rgb(255, 255, 255)
+}
+
+.destination strong {
+  color: rgb(13, 140, 179)
+}
+
+/* footer {
+  background-color: #353434;
+  
+}
+
+footer img {
+  width: 5%;
+  padding: 30px;
+  background-color: #353434;
+  position:relative;
+  text-decoration: none;
+  justify-content: center;
+  /* left: 45%; */
+/* } */
