@@ -1,6 +1,7 @@
 body {
   font-family: "Quicksand", sans-serif;
   margin: 0;
+  width: 100%;
 }
 
 header {
@@ -16,8 +17,14 @@ header {
   box-sizing: border-box;
 }
 
+main li img {
+  width: 300px;
+  height: 280px;
+}
+
 #page-logo a {
   padding: 10px;
+  margin-left: 51px;
   font-family: "Oleo Script", sans-serif;
   color: rgb(245, 243, 160);
   font-size: 50px;
@@ -28,8 +35,13 @@ header {
   z-index: 1;
 }
 
+#page-logo a:hover {
+  font-size: 53px;
+}
+
 header ul {
   display: flex;
+  margin-right: 25px;
   list-style: none;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -44,7 +56,7 @@ header li {
 
 #hero {
   height: 800px;
-  background-image: url(/Day15-20/images/places/IMG_2161.jpg);
+  background-image: url(/Day15-20/images/places/_DSC7512-HDR.jpg);
   background-size:cover;
   background-repeat: no-repeat;
   background-position: right 15% bottom 30%;
@@ -97,19 +109,29 @@ section div a:hover {
   font-size: 17px;
 }
 
-a {
+/* #nav-bar {
+  width: auto;
+  z-index: 4;
+} */
+
+/* Navbar elements */
+ul li a{
   text-decoration: none;
-  color: rgb(245, 243, 160);
+  color: rgb(255, 137, 2);
   border-radius: 6px;
-  font-size: 20px;
-  padding: 12px;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 5px;
 }
 
-header a:hover {
-  color: rgb(77, 77, 77);
-  background-color: rgb(255, 251, 0);
-  font-size: 21px;
+
+
+header ul li a:hover {
+  color: rgb(213, 255, 208);
+  background-color: rgb(12, 53, 106);
+  font-size: 25px;
 }
+/* Navbar elements */
 
 /* Adding linear gradient; add the degree of the lighting and the two colors you want  */
 #highlights {
@@ -161,8 +183,17 @@ header a:hover {
 footer {
   background-color: rgb(78, 71, 71);
   padding: 25px 0px;
+
+  /* keeps the footer at the btm without moving. Stays static */
+  position: static;
+  bottom: 0px;
+  width: 100%;
+  /* height: 150px; */
 }
 
+footer a {
+  background-color: rgb(78, 71, 71);
+}
 footer ul {
   display: flex;
   justify-content: center;
@@ -178,4 +209,18 @@ footer li {
 footer img {
   width: 100%;
   height: 100%;
+  background-color: rgb(78, 71, 71);
 }
+
+#copyright {
+  width: 800px;
+  margin-left: 50%;
+  font-size: 12px;
+  font-weight: 100;
+  color:white;
+  display: block;
+  padding-top:20px;
+  padding-bottom: 0px;
+  align-items: center;
+}
+
