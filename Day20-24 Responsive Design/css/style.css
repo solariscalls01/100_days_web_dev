@@ -16,10 +16,10 @@ a {
 }
 
 #main-header a:hover {
-  color: rgb(14, 123, 143);
-  background-color: rgb(44, 41, 38);
+  color: white;
+  background-color: rgb(221, 134, 34);
   border-radius: 8px;
-  padding: 0px 5px;
+  padding: 5px;
 }
 
 #main-header {
@@ -57,12 +57,61 @@ ul li {
 
 main {
   text-align: center;
-  background: linear-gradient(90deg, rgb(1, 1, 1), rgb(2, 2, 2));
+  background: linear-gradient(90deg, rgb(46, 44, 44), rgb(37, 34, 34));
   overflow: hidden;
 }
 
-article img {
-  width: 50%;
-  height: 50%;
-  object-fit: contain;
+main h1{
+  text-align: center;
+  color: rgb(238, 164, 80);
+  font-size: 38px;
+}
+
+/* section to create the grid for the images */
+#latest-products {
+  width: 80%;
+  margin: 50px auto;
+}
+
+/* Create the grid to have 2 columns using the fr "fractional" attr */
+#latest-products ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin: 0px;
+  padding: 0px;
+}
+/* section to create the grid for the images */
+
+/* decorates the image size to get proper aspect ratios. The height is the important factor in setting this.*/
+.food-items img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.food-items-content h2 {
+  color: rgb(202, 86, 19);
+  padding: 16px;
+  margin: 0px 0px 24.9px 0px
+}
+
+/* overflow helps to provide the rounded corners for the top of the images */
+.food-items {
+  background-color: rgb(228, 206, 182);
+  padding: 0px 0px 25px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.btn {
+  background-color: rgb(228, 157, 44);
+  color: white;
+  border-radius: 8px;
+  padding: 4px 24px;
+  margin-bottom: 30px;
+}
+
+.btn:hover {
+  background-color: rgb(221, 134, 34);
 }
