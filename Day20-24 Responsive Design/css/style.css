@@ -23,7 +23,7 @@ a {
 }
 
 #main-header {
-  height: 80px;
+  height: 5em;
 
   /* This portion centers the items in the header section */
   display: flex;
@@ -32,11 +32,11 @@ a {
   /* This portion centers the items in the header section */
 
   background-color: rgb(29, 26, 24);
-  padding: 0px 20px;
+  padding: 0% 3%;
 }
 
 #logo {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
   color: rgb(255, 128, 1);
   text-transform: uppercase;
@@ -50,9 +50,9 @@ ul {
 
 ul li {
   padding: 10px;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 500;
-  margin: 0px 16px;
+  margin: 0rem 1rem;
 }
 
 main {
@@ -61,23 +61,23 @@ main {
   overflow: hidden;
 }
 
-main h1{
+main h1 {
   text-align: center;
   color: rgb(238, 164, 80);
-  font-size: 38px;
+  font-size: 3rem;
 }
 
 /* section to create the grid for the images */
 #latest-products {
   width: 80%;
-  margin: 50px auto;
+  margin: 2rem auto;
 }
 
 /* Create the grid to have 2 columns using the fr "fractional" attr */
 #latest-products ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  gap: 1rem;
   margin: 0px;
   padding: 0px;
 }
@@ -85,7 +85,7 @@ main h1{
 
 /* decorates the image size to get proper aspect ratios. The height is the important factor in setting this.*/
 .food-items img {
-  height: 300px;
+  height: 15rem;
   width: 100%;
   object-fit: cover;
 }
@@ -93,7 +93,8 @@ main h1{
 .food-items-content h2 {
   color: rgb(202, 86, 19);
   padding: 16px;
-  margin: 0px 0px 24.9px 0px
+  margin: 0px 0px 24.9px 0px;
+  font-size: 1.5rem;
 }
 
 /* overflow helps to provide the rounded corners for the top of the images */
@@ -108,10 +109,58 @@ main h1{
   background-color: rgb(228, 157, 44);
   color: white;
   border-radius: 8px;
-  padding: 4px 24px;
-  margin-bottom: 30px;
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .btn:hover {
   background-color: rgb(221, 134, 34);
+}
+
+/* Creating the hamburger icon */
+#menu-btn {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#menu-btn span {
+  width: 100%;
+  height: 4px;
+  background-color: white;
+}
+
+/* Creating the hamburger icon */
+
+/* Responsive design section. parenthesis sets the min-width (emphasis on smart phones. Smart phones -> Desktop)
+ or max-width(desktops -> smartphones) Followed by {} and selecting which items you want / need to change. 
+ In our case, we have selected the section that changes the grid properties and instead of having 2 columns,
+  we change it to 1 column after the viewport reaches 768px. MEDIA QUERIES also need to be at the bottom of the page due to
+  code being read top to bottom.    */
+
+/* 48rem is equivalent to 768px. Default font size value is 16, therefore 768/16 = 48. 1rem is = to the default 
+font size for a webpage. */
+@media (max-width: 48rem) {
+  #latest-products ul {
+    grid-template-columns: 1fr;
+  }
+
+
+  main h1 {
+    font-size: 1.5rem;
+  }
+  /* This part makes the nav items disappear. Allows us to add the "hamburger" part.  */
+  nav {
+    display: none;
+  }
+}
+
+/* min width creates the default for the smart phone dimensions. In this case our hamburger icon is displayed with a screen < 768px or 48rem. Disappears 
+when min-width value is > 48rem or 768px  */
+@media (min-width: 48rem) {
+  #menu-btn {
+    display: none;
+  }
 }
