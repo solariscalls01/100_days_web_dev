@@ -15,14 +15,14 @@ a {
   color: rgb(219, 147, 64);
 }
 
-#main-header a:hover {
+.main-header a:hover {
   color: white;
   background-color: rgb(221, 134, 34);
   border-radius: 8px;
   padding: 5px;
 }
 
-#main-header {
+.main-header {
   height: 5em;
 
   /* This portion centers the items in the header section */
@@ -35,7 +35,37 @@ a {
   padding: 0% 3%;
 }
 
-#logo {
+/* hamburger section for the header  */
+/* fixed position in order to get the element "behind" the viewport so to speak. Allows to take the entire page   */
+#side-drawer {
+  background-color: rgb(29, 26, 24);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top:0px;
+  left: 0%;
+  display: none;
+}
+
+#side-drawer:target {
+  display: block;
+}
+
+#side-drawer ul {
+align-items: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+#side-drawer a {
+  color:rgb(253, 239, 213);
+  font-size: 2rem;
+}
+
+/* hamburger section for the header  */
+
+.logo {
   font-size: 1.5rem;
   font-weight: bold;
   color: rgb(255, 128, 1);
@@ -118,7 +148,7 @@ main h1 {
 }
 
 /* Creating the hamburger icon */
-#menu-btn {
+.menu-btn {
   width: 3rem;
   height: 3rem;
   display: flex;
@@ -126,11 +156,31 @@ main h1 {
   justify-content: space-between;
 }
 
-#menu-btn span {
+.menu-btn span {
   width: 100%;
   height: 4px;
   background-color: white;
 }
+
+/* Nav bar for when you click the hamburger.  */
+#side-drawer header {
+  height: 5em;
+
+  /* This portion centers the items in the header section */
+  display: flex;
+  /* justify-content: flex-end; */
+  align-items: center;
+  /* This portion centers the items in the header section */
+
+  padding: 0% 3%;
+}
+
+#side-drawer header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(255, 128, 1);
+}
+
 
 /* Creating the hamburger icon */
 
@@ -146,21 +196,23 @@ font size for a webpage. */
   #latest-products ul {
     grid-template-columns: 1fr;
   }
-
-
   main h1 {
     font-size: 1.5rem;
   }
   /* This part makes the nav items disappear. Allows us to add the "hamburger" part.  */
-  nav {
+  nav ul {
     display: none;
   }
+
 }
 
 /* min width creates the default for the smart phone dimensions. In this case our hamburger icon is displayed with a screen < 768px or 48rem. Disappears 
 when min-width value is > 48rem or 768px  */
 @media (min-width: 48rem) {
-  #menu-btn {
+  .menu-btn {
     display: none;
   }
+
+  
+
 }
