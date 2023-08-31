@@ -13,8 +13,8 @@
     />
   </head>
   <body>
-    <header id="main-header">
-      <a href="/Day20-24 Responsive Design/index.html" id="logo">Webfood</a>
+    <header class="main-header">
+      <a href="/Day20-24 Responsive Design/index.html" class="logo">Webfood</a>
       <nav>
         <ul>
           <li>
@@ -25,22 +25,47 @@
           </li>
         </ul>
       </nav>
-      <a href="" id="menu-btn">
+      <a href="#side-drawer" class="menu-btn">
         <span></span>
         <span></span>
         <span></span>
       </a>
     </header>
+
+    <!-- aside element represents a portion of a document whose content is only indirectly related to the 
+      document's main content. Asides are frequently presented as sidebars or call-out boxes. We nest the nav from above and just copy/ paste whatever item
+    we want for this side-header   -->
+    <aside id="side-drawer">
+      <header class="main-header">
+        <a href="/Day20-24 Responsive Design/index.html" class="logo">Webfood</a>
+        <a href="#" class="menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </header>
+      <nav>
+        <ul>
+          <li>
+            <a href="">Browse Meals</a>
+          </li>
+          <li>
+            <a href="">My Orders</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
     <main>
       <h1>Browse our Delicious Meals</h1>
       <section id="latest-products">
         <ul>
           <li class="food-items">
             <article>
-                <img
-                  src="/Day20-24 Responsive Design/images/cheeseburgers.jpg"
-                  alt="cheeseburger with fries"
-                />
+              <img
+                src="/Day20-24 Responsive Design/images/cheeseburgers.jpg"
+                alt="cheeseburger with fries"
+              />
               <div class="food-items-content">
                 <h2>Cheeseburger with Fries</h2>
                 <a href="" class="btn">Add to Cart</a>
@@ -49,10 +74,10 @@
           </li>
           <li class="food-items">
             <article>
-                <img
-                  src="/Day20-24 Responsive Design/images/risotto.jpg"
-                  alt="risotto with prawns"
-                />
+              <img
+                src="/Day20-24 Responsive Design/images/risotto.jpg"
+                alt="risotto with prawns"
+              />
               <div class="food-items-content">
                 <h2>Risotto with Prawns</h2>
                 <a href="" class="btn">Add to Cart</a>
