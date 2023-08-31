@@ -1,0 +1,59 @@
+html {
+    background-color: gainsboro;
+}
+
+main {
+    background-color: rgb(247, 245, 241);
+    width: 21rem;
+    border: 2px solid black;
+    margin: 2.5rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    
+}
+
+section {
+    text-align: center;
+}
+
+ul li {
+    list-style-position: inside ;
+}
+
+#price-section {
+    background-color: rgb(103, 201, 204);
+    color: white;
+    font-size: 2rem;
+}
+
+h1 {
+    text-align: left;
+    width: 25%;
+    margin-left: 1rem;
+}
+
+h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+a {
+    color:rgba(21, 223, 223, 0.842);
+    text-transform: uppercase;
+}
+
+#price-btn ul li a {
+    background-color: white;
+    text-decoration: none;
+    border: 1px solid grey;
+    padding: 0.7rem 4rem;
+}
+
+#price-btn ul li {
+    list-style: none;
+}
+
+#price-list ul {
+    text-align: left;
+}
