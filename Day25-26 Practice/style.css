@@ -16,9 +16,9 @@ main {
     flex-direction: column;
     justify-content:center;
 
-    /* example of how to use the transition effect */
+    /* example of how to use the transition effect. You only need one transition per section, 
+    otherwise it overwrites each other */
     transition: transform 0.1s ease-out;
-    transition: background-color 0.31s;
 }
 
 /* Playing around with the transform / transition properties. Transition property
