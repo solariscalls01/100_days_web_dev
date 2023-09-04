@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- action is the path that the input will be sent to. method is the GET/ POST. POST essentially
+    gets the input data to post on to the server to store this information -->
+    <form action="/user-data" method="POST">
+
+      <!-- label provides the text for what the input is. The "for" connects with the input label and
+      is generally matched with the id portion. Primarily used for the assistive technology portion. This
+      allows a person to click on the text "username" and it will automatically allow the person to type
+      in the input field  -->
+      <label for="username">User name</label>
+
+      <!-- name attribute is used as an identifier when posting. It is the key-value pair, where the key is 
+      user-name and the value is whatever that is submitted  -->
+      <input type="text" name="user-name" id="username" />
+
+      <button>Submit</button>
+    </form>
+  </body>
+</html>
