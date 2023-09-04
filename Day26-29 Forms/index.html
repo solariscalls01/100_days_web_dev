@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forms</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- action is the path that the input will be sent to. method is the GET/ POST. POST essentially
     gets the input data to post on to the server to store this information -->
     <form action="/user-data" method="POST">
-
       <!-- label provides the text for what the input is. The "for" connects with the input label and
       is generally matched with the id portion. Primarily used for the assistive technology portion. This
       allows a person to click on the text "username" and it will automatically allow the person to type
@@ -23,7 +25,57 @@
       <!-- name attribute is used as an identifier when posting. It is the key-value pair, where the key is 
       user-name and the value is whatever that is submitted  -->
       <input type="text" name="user-name" id="username" />
+      <label for="useremail">Email: </label>
+      <input type="email" name="user-email" id="useremail" />
+      <label for="userage">Age: </label>
+      <input type="number" name="user-age" id="userage" min="0" />
+      <label for="userpassword">Password: </label>
+      <input type="password" name="user-password" id="userpassword" />
+      <label for="userbirthdate">Birthday</label>
+      <input type="date" name="user-birthdate" id="userbirthdate" />
+      <hr />
+      <hr />
 
+
+      <!-- When performing radio buttons, in order to only allow for one choice selection, the "name" for the 
+      input must all be the same. The "value" attribute allows us to set (yes/no, true/ false) or get the specific value for the radio buttons. 
+      Div or whatever separator you want to use to organize better for CSS-->
+      <h2>How should we verify</h2>
+      <div class="form-control-inline">
+        <input
+          type="radio"
+          id="verify-sms"
+          name="verify"
+          value="text-message"
+        />
+        <label for="verify-sms">Text SMS</label>
+      </div>
+      <div class="form-control-inline">
+        <input type="radio" id="verify-email" name="verify" value="email" />
+        <label for="verify-email">Email</label>
+      </div>
+      <div class="form-control-inline">
+        <input type="radio" id="verify-call" name="verify" value="phone call" />
+        <label for="verify-call">Phone Call</label>
+      </div>
+      <h2>Hungry?</h2>
+      <div class="form-control-inline">
+        <input type="radio" id="set-true" name="yes-no" value="yes" />
+        <label for="set-true">Yes</label>
+        <input type="radio" id="set-false" name="yes-no" value="no" />
+        <label for="set-false">No</label>
+      </div>
+
+      <!-- dealing with checkboxes. For the name, can have multiple selections vs using radio buttons where we can only chose one. 
+      Items are grouped together when submitted to the server -->
+      <div class="form-control-inline">
+        <input type="checkbox" id="contact-email" name="contact" value="email" />
+        <label for="contact-email">Contact via email?</label>
+      </div>
+      <div class="form-control-inline">
+        <input type="checkbox" id="contact-phone" name="contact" value="phone" />
+        <label for="contact-phone">Contact via phone?</label>
+      </div>
       <button>Submit</button>
     </form>
   </body>

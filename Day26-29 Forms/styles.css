@@ -45,3 +45,14 @@ input:focus {
     background-color: rgb(26, 183, 211);
     color: rgb(86, 53, 206)
 }
+
+
+.form-control-inline {
+  display: flex;
+}
+
+.form-control-inline input {
+  width: auto;
+  margin-right: 0.7rem;
+  margin-bottom: 2.5rem;
+}
