@@ -1,0 +1,89 @@
+html {
+    --form-color: rgb(132, 152, 170)
+}
+
+h1 {
+    text-align: center;
+    margin: 2rem;
+}
+body {
+    background-color: aliceblue;
+}
+
+form {
+    background-color: var(--form-color);
+    display: block;
+    width: 40rem;
+    border-radius: 6px;
+    padding: 1rem;
+    margin: auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+/* form {
+    margin: 3rem auto;
+    padding: 1rem;
+    border-radius: 6px;
+} */
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+input, textarea, select {
+    width: 100%;
+    border-radius: 5px;
+    padding: 0.25rem 0.1rem ;
+    display: flex;
+    resize: none;
+}
+
+.form-control {
+    display: flex;
+    flex: column;
+    
+  }
+  
+.form-control input {
+    width: auto;
+    margin-right: 0.7rem;
+    margin-bottom: 0.25rem;
+  }
+
+#button {
+    display: flex;
+    flex-direction: row;
+    justify-content:right;
+    
+}
+
+button {
+    padding: 0.2rem 1rem;
+    border-radius: 5px;
+    background-color: rgb(132, 152, 170);
+    color: white;
+    cursor: pointer;
+    font:inherit;
+}
+
+#submit {
+    background-color: rgb(75, 131, 145);
+    color: white;
+}
+
+#accept-terms {
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: red;
+}
+
+#submit:hover {
+    background-color: var(--form-color);
+}
