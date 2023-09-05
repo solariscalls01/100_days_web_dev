@@ -13,70 +13,154 @@
     />
   </head>
   <body>
-    <!-- action is the path that the input will be sent to. method is the GET/ POST. POST essentially
-    gets the input data to post on to the server to store this information -->
-    <form action="/user-data" method="POST">
-      <!-- label provides the text for what the input is. The "for" connects with the input label and
-      is generally matched with the id portion. Primarily used for the assistive technology portion. This
-      allows a person to click on the text "username" and it will automatically allow the person to type
-      in the input field  -->
-      <label for="username">User name</label>
+    <header>
+      <h1>Demo Forms</h1>
+    </header>
+    <main>
+        <!-- action is the path that the input will be sent to. method is the GET/ POST. POST essentially
+        gets the input data to post on to the server to store this information -->
+      <form action="/user-data" method="POST">
+        <section>
+          <h2>Personal Information</h2>
+          <ul>
+            <li>
+              <!-- label provides the text for what the input is. The "for" connects with the input label and
+              is generally matched with the id portion. Primarily used for the assistive technology portion. This
+              allows a person to click on the text "username" and it will automatically allow the person to type
+              in the input field  -->
+              <label for="username">User name</label>
 
-      <!-- name attribute is used as an identifier when posting. It is the key-value pair, where the key is 
-      user-name and the value is whatever that is submitted  -->
-      <input type="text" name="user-name" id="username" />
-      <label for="useremail">Email: </label>
-      <input type="email" name="user-email" id="useremail" />
-      <label for="userage">Age: </label>
-      <input type="number" name="user-age" id="userage" min="0" />
-      <label for="userpassword">Password: </label>
-      <input type="password" name="user-password" id="userpassword" />
-      <label for="userbirthdate">Birthday</label>
-      <input type="date" name="user-birthdate" id="userbirthdate" />
-      <hr />
-      <hr />
+              <!-- name attribute is used as an identifier when posting. It is the key-value pair, where the key is 
+              user-name and the value is whatever that is submitted. Having the "required" attr ensures that people can't
+              leave this space blank.   -->
+              <input type="text" name="user-name" id="username" required placeholder="David Watson"/>
+              <label for="userpassword">Password: </label>
 
+              <!-- password requirements. Minlength/ max length controls amount of characters vs min / max controls the min/max value
+              respectively -->
+              <input type="password" name="user-password" id="userpassword" minlength="4" />
+            </li>
+            <li>
+              <label for="useremail">Email: </label>
+              <input type="email" name="user-email" id="useremail" placeholder="name@email.com" />
+            </li>
+          </ul>
 
-      <!-- When performing radio buttons, in order to only allow for one choice selection, the "name" for the 
+        <section>
+          <h2>Demographics</h2>
+          <ul>
+            <li>
+              <!-- Minlength/ max length controls amount of characters vs min / max controls the min/max value
+              respectively -->
+              <label for="userage">Age: </label>
+              <input type="number" name="user-age" id="userage" required min="18" max="24" />
+              
+
+              <!-- for setting min/max dates. The built-in date picker changes depending on if there is a min/ max attr value. Dates
+              must be in year-day-month format.-->
+              <label for="userbirthdate">Birthday</label>
+              <input type="date" name="user-birthdate" id="userbirthdate" required min="2009-01-01" max="2020-01-01"/>
+            </li>
+          </ul>
+ 
+        </section>
+
+        </section>
+        <section>
+          <!-- When performing radio buttons, in order to only allow for one choice selection, the "name" for the 
       input must all be the same. The "value" attribute allows us to set (yes/no, true/ false) or get the specific value for the radio buttons. 
       Div or whatever separator you want to use to organize better for CSS-->
-      <h2>How should we verify</h2>
-      <div class="form-control-inline">
-        <input
-          type="radio"
-          id="verify-sms"
-          name="verify"
-          value="text-message"
-        />
-        <label for="verify-sms">Text SMS</label>
-      </div>
-      <div class="form-control-inline">
-        <input type="radio" id="verify-email" name="verify" value="email" />
-        <label for="verify-email">Email</label>
-      </div>
-      <div class="form-control-inline">
-        <input type="radio" id="verify-call" name="verify" value="phone call" />
-        <label for="verify-call">Phone Call</label>
-      </div>
-      <h2>Hungry?</h2>
-      <div class="form-control-inline">
-        <input type="radio" id="set-true" name="yes-no" value="yes" />
-        <label for="set-true">Yes</label>
-        <input type="radio" id="set-false" name="yes-no" value="no" />
-        <label for="set-false">No</label>
-      </div>
 
-      <!-- dealing with checkboxes. For the name, can have multiple selections vs using radio buttons where we can only chose one. 
+      <!-- Can also use required for radio buttons as well. Doesn't need for all radio buttons just one of them to work.  -->
+          <h2>How should we verify</h2>
+          <div class="form-control-inline">
+            <input
+              type="radio"
+              id="verify-sms"
+              name="verify"
+              value="text-message"
+              required
+            />
+            <label for="verify-sms">Text SMS</label>
+          </div>
+          <div class="form-control-inline">
+            <input type="radio" id="verify-email" name="verify" value="email" />
+            <label for="verify-email">Email</label>
+          </div>
+          <div class="form-control-inline">
+            <input
+              type="radio"
+              id="verify-call"
+              name="verify"
+              value="phone call"
+            />
+            <label for="verify-call">Phone Call</label>
+          </div>
+          <hr />
+          <h2>Hungry?</h2>
+          <div class="form-control-inline">
+            <input type="radio" id="set-true" name="yes-no" value="yes" />
+            <label for="set-true">Yes</label>
+            <input type="radio" id="set-false" name="yes-no" value="no" />
+            <label for="set-false">No</label>
+          </div>
+        </section>
+        <hr />
+        <section>
+          <!-- dealing with checkboxes. For the name, can have multiple selections vs using radio buttons where we can only chose one. 
       Items are grouped together when submitted to the server -->
-      <div class="form-control-inline">
-        <input type="checkbox" id="contact-email" name="contact" value="email" />
-        <label for="contact-email">Contact via email?</label>
-      </div>
-      <div class="form-control-inline">
-        <input type="checkbox" id="contact-phone" name="contact" value="phone" />
-        <label for="contact-phone">Contact via phone?</label>
-      </div>
-      <button>Submit</button>
-    </form>
+          <div class="form-control-inline">
+            <input
+              type="checkbox"
+              id="contact-email"
+              name="contact"
+              value="email"
+            />
+            <label for="contact-email">Contact via email?</label>
+          </div>
+          <div class="form-control-inline">
+            <input
+              type="checkbox"
+              id="contact-phone"
+              name="contact"
+              value="phone"
+            />
+            <label for="contact-phone">Contact via phone?</label>
+          </div>
+        </section>
+        <section>
+          <!-- message boxes uses the "textarea" instead of the input  -->
+          <div class="form-control-inline">
+            <label for="usermessage">Your Message</label>
+            <textarea
+              name="user-message"
+              id="usermessage"
+              cols="45"
+              rows="10"
+            ></textarea>
+          </div>
+          <hr />
+        </section>
+
+        <section>
+          <!-- dropdown menus. Uses the "select" instead of "input". Options are used to create the various dropdown list items. 
+      Typically only the options have values. the select attribute has the name and ids.  -->
+          <div class="form-control-inline">
+            <label for="dropdown">Favorite Colors </label>
+            <select name="favorite-color" id="dropdown">
+              <option value="blue">Blue</option>
+              <option value="red">Red</option>
+              <option value="black">Black</option>
+              <option value="purple">Purple</option>
+              <option value="yellow">Yellow</option>
+            </select>
+          </div>
+
+          <!-- Buttons have different attribute types. Can "reset" "submit" "menu" -->
+          <button type="reset">Reset</button>
+          <button type="submit">Submit</button>
+        </section>
+      </form>
+    </main>
   </body>
 </html>

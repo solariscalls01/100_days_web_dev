@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms Challenge</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Contact Us</h1>
+    </header>
+    <main>
+        <form action="/" method="GET">
+        <section>
+            <h2>How can we help you?</h2>
+            <ul>
+                <li>
+                    <label for="username">Your Name</label>
+                    <input type="text" name="user-name" id="username" required />
+                    <label for="useremail">Your E-Mail Address</label>
+                    <input type="email" name="user-email" id="useremail" required />
+                    <label for="usernum">Your Phone Number</label>
+                    <input type="tel" name="user-phone" id="usernum" />
+                    <label for="usermessage">Your Message</label>
+                </li>
+          </ul>
+          <textarea
+            name="user-message"
+            id="usermessage"
+            cols="30"
+            rows="10"
+            placeholder="Your message here"
+          ></textarea>
+        </section>
+        <section>
+          <label for="referral">How did you find us?</label>
+          <select name="user-referral" id="referral">
+            <option value="web-search">Web Search</option>
+            <option value="word-of-mouth">Word of Mouth</option>
+            <option value="other">Other</option>
+          </select>
+        </section>
+        <h2>How should we reply?</h2>
+        <section>
+          <div class="form-control">
+            <input type="radio" name="contact" value="call" id="phone" />
+            <label for="phone">Call me</label>
+          </div>
+          <div class="form-control">
+            <input type="radio" name="contact" value="email" id="email" />
+            <label for="email">Send me an Email</label>
+          </div>
+          <div class="form-control">
+            <input type="radio" name="contact" value="no" id="no-contact" />
+            <label for="no-contact">Don't reply</label>
+          </div>
+        </section>
+        <section>
+          <div class="form-control" id="accept-terms">
+            <input type="checkbox" id="accept" name="accept-terms" required />
+            <label for="accept">Accept Terms</label>
+          </div>
+        </section>
+        <div id="button">
+          <ul>
+            <li>
+              <button type="reset">Clear</button>
+              <button type="submit" id="submit">Submit</button>
+            </li>
+          </ul>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
