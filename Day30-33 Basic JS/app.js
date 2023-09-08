@@ -8,11 +8,13 @@ let person1 = {
   age: 33,
 };
 
-function calculateAge(age) {
-  return age - 18;
+
+function calculateAge (age) {
+    adultYears = age - 18
+    return adultYears
 }
 
-alert(calculateAge(3321));
+console.log(calculateAge(321))
 
 // can add a function to an object as well. Does not need the variable declaration (e.g., let, var, const). Adding a function to an object is also called a "method"
 let person = {
