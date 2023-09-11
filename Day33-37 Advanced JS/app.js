@@ -50,3 +50,26 @@ console.dir(secondParagraph);
 
 firstParagraph.parentElement.append(firstParagraph); //this line takes the first paragraph line, and appends it to the "end" of the list.
 secondParagraph.parentElement.insertBefore(secondParagraph, firstParagraph); //this version takes the 2nd paragraph and uses the insertBefore method that takes 2 parameters; first is the item you want followed by where you want to insert
+
+////////////// Inner HTML
+// Allows to input text, but also allows you to put actual HTML code in as well. 
+firstParagraph.innerHTML = "<p>Adding another text here.</p><a href='https://www.yahoo.com'>yahoo link here</a><h1>hello again</h1>"
+
+///////////// Event Listeners
+// takes in two parameters. First is the event that should happen (e.g., click, hover over) and the other is a function 
+
+function addClick () {
+    if (click.textContent === "Click me!") {
+        click.addEventListener('click', addClick)
+        click.textContent = "this was clicked"
+    } 
+    else if (click.textContent === "this was clicked") {
+        click.addEventListener('click', addClick)
+        click.textContent = "Click me!"
+    }
+}
+
+// do not add the () in the 2nd parameter for the function known as "callback function", which means that it is 
+// passed as a parameter value to another function or method ("to be executed in the future") 
+let click = document.getElementById('click')
+click.addEventListener('click', addClick)
