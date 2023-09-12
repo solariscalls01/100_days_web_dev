@@ -60,7 +60,13 @@ function changeBackground() {
     getSecondBtn.parentNode.childNodes[3].style.backgroundColor = "blue"
 }
     
-    getSecondBtn.addEventListener('click', changeBackground)
+    // getSecondBtn.addEventListener('click', changeBackground)
+
+function changeBackgroundinCSS() {
+    document.querySelector('section p').classList.add("background-blue")
+}
+
+getSecondBtn.addEventListener('click', changeBackgroundinCSS)
 
 // 5) Solve (4) both by changing the "inline styles" as well as by adding CSS classes
 //    Note: You'll have to add those classes to the styles.css file first!
