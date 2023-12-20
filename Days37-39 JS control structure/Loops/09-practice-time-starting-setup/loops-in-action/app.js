@@ -53,3 +53,48 @@ function displayUserData() {
 }
 
 displayUserDataButton.addEventListener('click', displayUserData)
+
+// Roll Dice
+
+const getDiceButton = document.querySelector('#statistics button')
+let counter = 0
+
+
+// function to create a random dice roll
+function rollDice() {
+  return Math.floor(Math.random() * 6) + 1;
+}
+
+function rollDiceButton() {
+  // Get the element to find the value in the input box and get its value
+  const getNumberEl = document.getElementById('user-target-number')
+  const getNumber = getNumberEl.value
+
+  let getXValue = document.getElementById('output-total-rolls')
+  let getYValue = document.getElementById('output-target-number')
+  const insertRandomDiceEl = document.getElementById('dice-rolls')
+  
+  let counter = 1
+
+  // resets the appended values after every click
+  insertRandomDiceEl.innerHTML = ""
+
+  hasRolledNumber = false
+  
+  while (!hasRolledNumber) {
+    const getRandomNumber = rollDice()
+    // create a new element "li" to append to element
+    let insertListItem = document.createElement('li')
+    let rollText = "Roll " + counter + ": " + getRandomNumber 
+    insertListItem.textContent = rollText
+    insertRandomDiceEl.append(insertListItem)
+    counter +=1
+    hasRolledNumber = getNumber == getRandomNumber
+    getYValue.textContent = getRandomNumber
+  }
+
+  console.log(getYValue)
+  getXValue.textContent = (counter - 1)
+
+}
+getDiceButton.addEventListener('click', rollDiceButton)
