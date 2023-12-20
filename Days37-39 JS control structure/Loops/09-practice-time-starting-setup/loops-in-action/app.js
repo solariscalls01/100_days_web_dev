@@ -15,14 +15,41 @@ function calculateSum() {
 
 getCalculateButton.addEventListener("click", calculateSum);
 
+
+// Highlight links
 const getHighLightButton = document.querySelector('#highlight-links button')
 
 function highlightLinks() {
   const anchorElements = document.querySelectorAll('#highlight-links a')
   console.log(anchorElements)
   for (i of anchorElements) {
+    console.log(i)
     i.className = "highlight"
   }
 }
  
 getHighLightButton.addEventListener('click', highlightLinks);
+
+// Display user Data
+const dummyUserData = {
+  firstName: "Max",
+  lastName: "Dy",
+  age: "33"
+}
+
+const displayUserDataButton = document.querySelector("#user-data button")
+
+function displayUserData() {
+
+  const outputElement = document.getElementById('output-user-data')
+
+  outputElement.innerHTML = "  "
+  for (key in dummyUserData) {
+    const insertElement = document.createElement('li')
+    const outputText = key.toUpperCase() + ": " + dummyUserData[key]
+    insertElement.textContent = outputText
+    outputElement.append(insertElement)
+  }
+}
+
+displayUserDataButton.addEventListener('click', displayUserData)
