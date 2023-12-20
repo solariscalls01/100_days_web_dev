@@ -14,3 +14,15 @@ function calculateSum() {
 }
 
 getCalculateButton.addEventListener("click", calculateSum);
+
+const getHighLightButton = document.querySelector('#highlight-links button')
+
+function highlightLinks() {
+  const anchorElements = document.querySelectorAll('#highlight-links a')
+  console.log(anchorElements)
+  for (i of anchorElements) {
+    i.className = "highlight"
+  }
+}
+ 
+getHighLightButton.addEventListener('click', highlightLinks);
