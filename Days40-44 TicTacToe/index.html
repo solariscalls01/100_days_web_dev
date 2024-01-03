@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TicTacToe</title>
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
 </head>
 <body>
     <main>
@@ -17,30 +18,55 @@
                 <h3>Player 1</h3>
                 <h1 id="player1">Player Name</h1>
                 <p class="size">X</p>
-                <button class="edit-btn">Edit</button>
+                <button id="edit-btn-1" onclick="editNameScreen()">Edit</button>
             </div>
             <div class="players">
                 <h3>Player 2</h3>
                 <h1 id="player2">Player Name</h1>
                 <p class="size">O</p>
-                <button class="edit-btn">Edit</button>
+                <button id="edit-btn-2" onclick="editNameScreen()">Edit</button>
             </div>
         </article>
         <article id="start-btn">
             <button>Start New Game</button>
         </article>
         <!-- Section to add the overlay for editing player names -->
-        <article id="" class="">
-            <ul id="overlay-div">
-                <li><h1>Choose Your name</h1></li>
-                <li><h3>Player Name</h3></li>
-                <li><input type="text" placeholder="player name" required></li>
-                <li>
-                    <button class="btn-cancel" onclick="cancelAction()">Cancel</button>
-                    <button class="btn-confirm" onclick="confirmAction()">Confirm</button>
-                </li>
-            </ul>        
+        <article id="overlay" class="overlay">
+            <div class="modal">
+                <h2>Choose Your Name</h2>
+                <form>
+                    <div>
+                        <label for="playername">Player Name</label>
+                        <input type="text" name="playername" id="playername">
+                    </div>
+                    <div>
+                        <!-- setting the type to button just "cancels" the command -->
+                        <button type="button" onclick="cancelBtn()">Cancel</button>
+                        <button type="button" onclick="changeName()">Confirm</button>
+                    </div>
+                </form>
+            </div>
         </article>
+        <section id="active-game">
+            <article>
+                <h3>You Won! <span id="winner-name">Player Name</span></h3>
+                <p>Click "Start New Game"</p>
+            </article>
+            <p>It's your turn <span id="active-player-name">Player Name</span>!</p>
+            <ol>
+                <li></li>
+                <li></li>
+                <li></li>
+
+                <li></li>
+                <li></li>
+                <li></li>
+
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </section>
     </main>
 
     
