@@ -4,3 +4,82 @@
     text-align: center;
     padding: 1.2rem;
 }
+
+#player-tag{
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    
+}
+
+.players h1{
+    color: rgb(68, 37, 206);
+}
+
+.players {
+    background-color: rgb(194, 193, 231);
+    border: 1rem solid white;
+    border-radius: 20px;
+    width: 25%;
+    text-align: center;
+    padding-bottom: 1.2rem;
+
+}
+
+#start-btn {
+    text-align: center;
+}
+
+#start-btn button{
+    text-align: center;
+    background-color: rgb(144, 115, 224);
+    color: white;
+    padding: 0.8rem 1rem 1rem 0.8rem;
+    border-radius: 10px;
+}
+
+/* changes the btn feature in the player box */
+.edit-btn{
+    background: transparent;
+    color: rgb(71, 33, 173);
+    border: none;
+}
+
+.edit-btn:hover {
+    background-color: #ffffff;
+    color: #6a31d3;
+    border-radius: 10px;
+  }
+
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Style for the overlay content */
+  .overlay-content {
+    background: #fff; /* White background for the content */
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+#overlay-div{
+    list-style: none;
+    text-align: center;
+    padding: 1rem;
+}
+
+#overlay-div input{
+    padding: 0.3rem;
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 1.2rem;
+}

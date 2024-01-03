@@ -12,7 +12,37 @@
             <h1>Play Tic, Tac, Toe</h1>
             <p>Built with HTML, CSS, JS</p>
         </article>
+        <article id="player-tag">
+            <div class="players">
+                <h3>Player 1</h3>
+                <h1 id="player1">Player Name</h1>
+                <p class="size">X</p>
+                <button class="edit-btn">Edit</button>
+            </div>
+            <div class="players">
+                <h3>Player 2</h3>
+                <h1 id="player2">Player Name</h1>
+                <p class="size">O</p>
+                <button class="edit-btn">Edit</button>
+            </div>
+        </article>
+        <article id="start-btn">
+            <button>Start New Game</button>
+        </article>
+        <!-- Section to add the overlay for editing player names -->
+        <article id="" class="">
+            <ul id="overlay-div">
+                <li><h1>Choose Your name</h1></li>
+                <li><h3>Player Name</h3></li>
+                <li><input type="text" placeholder="player name" required></li>
+                <li>
+                    <button class="btn-cancel" onclick="cancelAction()">Cancel</button>
+                    <button class="btn-confirm" onclick="confirmAction()">Confirm</button>
+                </li>
+            </ul>        
+        </article>
     </main>
+
     
 </body>
 </html>
