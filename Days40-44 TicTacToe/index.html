@@ -18,13 +18,13 @@
                 <h3>Player 1</h3>
                 <h1 id="player1">Player Name</h1>
                 <p class="size">X</p>
-                <button id="edit-btn-1" onclick="editNameScreen()">Edit</button>
+                <button id="edit-btn-1" onclick="editNameScreen(this)">Edit</button>
             </div>
             <div class="players">
                 <h3>Player 2</h3>
                 <h1 id="player2">Player Name</h1>
                 <p class="size">O</p>
-                <button id="edit-btn-2" onclick="editNameScreen()">Edit</button>
+                <button id="edit-btn-2" onclick="editNameScreen(this)">Edit</button>
             </div>
         </article>
         <article id="start-btn">
@@ -42,7 +42,7 @@
                     <div>
                         <!-- setting the type to button just "cancels" the command -->
                         <button type="button" onclick="cancelBtn()">Cancel</button>
-                        <button type="button" onclick="changeName()">Confirm</button>
+                        <button type="button" onclick="changeName(this)">Confirm</button>
                     </div>
                 </form>
             </div>

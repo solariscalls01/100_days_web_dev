@@ -1,7 +1,22 @@
 
 // function to toggle on/off the overlay screen for the edit button
 // logic for changing name should be here. 
-function editNameScreen(){
+function editNameScreen(event){
+    // get the id of the buttons that are clicked
+    let btnId = event.id
+    // console.log(btnId)
+    
+    // set variables to check if btn belongs to player 1 or player 2
+    if (btnId === "edit-btn-1"){
+        console.log(btnId)
+    }
+    else {
+        console.log(btnId)
+        alert('btn2 clicked')
+    }
+
+
+
     document.getElementById('overlay').style.display = "flex"
     document.getElementById('overlay').addEventListener('click', function(event) {
         if (event.target === this) {
@@ -16,18 +31,14 @@ function cancelBtn(){
 }
 
 
-
-
-
-// Edit function to change the name of the players
-function changeName(){
+//  Confirm button function for editing the name of the players
+function changeName(event){
+    console.log(event)
     let name = document.getElementById('playername').value
-    let player1name = document.getElementById('edit-btn-1')
-    let player2name = document.getElementById('edit-btn-2')
-    let replaceName;
+    let getBtnAttribute = document.getElementsByTagName('button')
+    console.log(getBtnAttribute)
+    
 
-    console.dir(player1name)
-    console.dir(player2name)
     if (player1name.id === 'edit-btn-1') {
         replaceName = document.getElementById('player1')
         replaceName.innerHTML = name

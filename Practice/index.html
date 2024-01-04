@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Button Properties</title>
+</head>
+<body>
+
+<button id="button1" onclick="getButtonProperties(this)">Button 1</button>
+<button id="button2" onclick="getButtonProperties(this)">Button 2</button>
+
+<script>
+    function getButtonProperties(clickedButton) {
+        // Access properties of the clicked button
+        var buttonId = clickedButton.id;
+        var buttonText = clickedButton.textContent;
+
+        // Log the properties
+        console.log("Button ID: " + buttonId);
+        console.log("Button Text: " + buttonText);
+    }
+</script>
+
+</body>
+</html>
