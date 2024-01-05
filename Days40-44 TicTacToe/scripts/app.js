@@ -42,9 +42,12 @@ const displayGameGrid = document.getElementById('active-game')
 startGameButton.addEventListener('click', startNewGame)
 const playerFirst = document.getElementById('active-player-name')
 
-const getGridItems = document.querySelectorAll('#game-board li')    // Needs the class indicator and since we are targeting the elements AFTER the ol, we use li
 
-// Creating a for OF loop to add an event listener to each item. Can be done manually, but this is easier to perform task
+
+const getGridItems = document.querySelectorAll('#game-board li')    // Needs the class indicator and since we are targeting the elements AFTER the ol, we use li
+let gridLength = getGridItems.length
+console.log(gridLength)
+// Creating a for loop to add an event listener to each item. Can be done manually, but this is easier to perform task
 for (const getGridItem of getGridItems) {
     getGridItem.addEventListener('click', selectGrid)
     // console.log(getGridItem)
