@@ -3,6 +3,9 @@ const editPlayer1BtnElement = document.getElementById('edit-player-1-btn')
 const editPlayer2BtnElement = document.getElementById('edit-player-2-btn')
 let getNameElement = document.getElementById('playername')
 
+let edittedPlayer = "0"
+let anotherPlayer = ""
+
 // Variables for overlays and modals
 const playerConfigOverlayEl = document.getElementById('config-overlay')
 const backdropEl = document.getElementById('backdrop')
