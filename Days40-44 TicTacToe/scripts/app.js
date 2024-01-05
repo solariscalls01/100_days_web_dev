@@ -3,8 +3,16 @@ const editPlayer1BtnElement = document.getElementById('edit-player-1-btn')
 const editPlayer2BtnElement = document.getElementById('edit-player-2-btn')
 let getNameElement = document.getElementById('playername')
 
+// Creating the editted player variables to set "permanently" in the html code
 let edittedPlayer = "0"
-let anotherPlayer = ""
+
+// Create an array of objets for the players that include the name and the symbols
+const players = [
+    {name: "",
+    symbol: "X"},
+    {name: "",
+    symbol: "O"}
+]
 
 // Variables for overlays and modals
 const playerConfigOverlayEl = document.getElementById('config-overlay')

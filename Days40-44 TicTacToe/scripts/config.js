@@ -2,7 +2,6 @@
 // Since config.js is loaded first, but is NOT executed until after the variables have already been declared.
 
 function openPlayerConfig(e) {
-    console.log(anotherPlayer)
     edittedPlayer = e.target.dataset.playerid
     // console.log(edittedPlayer)
     playerConfigOverlayEl.style.display = "block"
@@ -14,6 +13,7 @@ function closePlayerConfig() {
     backdropEl.style.display = 'none'
     formEl.firstElementChild.classList.remove('red-warning')
     warning.innerHTML = ""
+    formEl.firstElementChild.lastElementChild.value = ""              // resets the input box to a clear value
     
 }
 
@@ -30,23 +30,30 @@ function savePlayerName(event){
     const changeName = document.getElementById('edit-player-' + edittedPlayer)
 
     if (enteredPlayerName === "") {
-        console.dir(event.target.firstElementChild.classList.add('red-warning'))    // allows us to add the warning class to the first form div element using the child element cascade
-        // event.target.firstElementChild.classList.childNodes[3].add('red-warning')
+        event.target.firstElementChild.classList.add('red-warning')             // allows us to add the warning class to the first form div element using the child element cascade      
         let warning = document.getElementById('warning')
         warning.innerHTML = "Name cannot be blank!"
         return;     // return stops the rest of the function and doesn't execute anymore code
     }
 
-    else if (edittedPlayer == "1") {
-       changeName.children[1].innerHTML = enteredPlayerName
-       closePlayerConfig()
-       event.target[0].value = ""       // resets the input box to a clear value
+    // Similar if/ else but more concise and cleaner code
+    changeName.children[1].innerHTML = enteredPlayerName
+    players[edittedPlayer - 1].name = enteredPlayerName     // Subtact 1 due to indexing from array
+    closePlayerConfig();
 
-    }
-    else {
-        changeName.children[1].innerHTML = enteredPlayerName
-        closePlayerConfig()
-        event.target[0].value = ""      // resets the input box to a clear value
-    }
+    
+    // else if (edittedPlayer == "1") {
+    //    changeName.children[1].innerHTML = enteredPlayerName
+    //    closePlayerConfig()
+    //    players[0]['name'] = enteredPlayerName   // Update the array of the player names
+       
+    //    console.dir(players)
+    
+    // }
+    // else {
+    //     changeName.children[1].innerHTML = enteredPlayerName
+    //     closePlayerConfig()
+    //     players[1]['name'] = enteredPlayerName   // Update the array of the player names
+    // }
 
 }
