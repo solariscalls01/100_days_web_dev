@@ -9,8 +9,6 @@ let edittedPlayer = "0"
 // Create an array of objets for the players that include the name and the symbols
 let activePlayer = 0
 
-// select a random player to go first
-let randomPlayer = Math.floor(Math.random() * 2)
 const players = [
     {name: "",
     symbol: "X"},

@@ -1,10 +1,13 @@
 function startNewGame() {
+    // select a random player to go first
+    let randomPlayer = Math.floor(Math.random() * 2)
     if (randomPlayer === 1) {
         playerFirst.innerHTML = players[randomPlayer].name
     }
     else {
         playerFirst.innerHTML = players[randomPlayer].name
     }
+    
     // set the first active player value if player 2 goes first to trigger "O" symbol
     if (randomPlayer === 1) {
         activePlayer = 1
@@ -17,6 +20,13 @@ function startNewGame() {
     //     return;
     // }
     displayGameGrid.style.display = "block"
+
+    // Reset the conditions once start New game has been clicked again. 
+    for (const getGridItem of getGridItems) {
+        getGridItem.addEventListener('click', selectGrid)
+        getGridItem.innerHTML = ""
+        getGridItem.classList.remove('disabled')
+    }
 }
 
 function selectGrid(e) {
