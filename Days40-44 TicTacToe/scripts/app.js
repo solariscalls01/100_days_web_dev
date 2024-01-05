@@ -7,6 +7,10 @@ let getNameElement = document.getElementById('playername')
 let edittedPlayer = "0"
 
 // Create an array of objets for the players that include the name and the symbols
+let activePlayer = 0
+
+// select a random player to go first
+let randomPlayer = Math.floor(Math.random() * 2)
 const players = [
     {name: "",
     symbol: "X"},
@@ -34,47 +38,16 @@ cancelBtn.addEventListener('click', closePlayerConfig);
 backdropEl.addEventListener('click', closePlayerConfig);
 
 
+// Start Game Button Variables
+const startGameButton = document.getElementById('start-new-game')
+const displayGameGrid = document.getElementById('active-game')
+startGameButton.addEventListener('click', startNewGame)
+const playerFirst = document.getElementById('active-player-name')
 
+const getGridItems = document.querySelectorAll('#game-board li')    // Needs the class indicator and since we are targeting the elements AFTER the ol, we use li
 
-// function to toggle on/off the overlay screen for the edit button
-// logic for changing name should be here. 
-function editNameScreen(event){
-    // get the id of the buttons that are clicked
-    let btnId = event.id
-    // console.log(btnId)
-    
-    // set variables to check if btn belongs to player 1 or player 2
-    if (btnId === "edit-btn-1"){
-        let player1Name = document.getElementById('player1')
-        changeName(player1Name)
-    }
-    else {
-        let player2Name = document.getElementById('player2')
-        changeName(player2Name)
-
-    }
-
-    document.getElementById('overlay').style.display = "flex"
-    document.getElementById('overlay').addEventListener('click', function(event) {
-        if (event.target === this) {
-            cancelBtn();
-        }
-    })
-}
-
-
-
-//  Confirm button function for editing the name of the players
-function changeName(event){
-    // console.dir(event)
-
-    if (event.id === "player1") {
-        let name = document.getElementById('playername').value
-        event.innerText = name
-    }
-    // else if (event.id === "") {
-    //     alert("player name can't be empty")
-    // }
-
-
+// Creating a for OF loop to add an event listener to each item. Can be done manually, but this is easier to perform task
+for (const getGridItem of getGridItems) {
+    getGridItem.addEventListener('click', selectGrid)
+    // console.log(getGridItem)
 }
