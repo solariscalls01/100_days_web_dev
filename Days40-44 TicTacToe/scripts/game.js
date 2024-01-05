@@ -21,11 +21,15 @@ function startNewGame() {
 
 function selectGrid(e) {
     e.target.innerHTML = players[activePlayer].symbol
+    e.target.classList.add('disabled')      // add the disabled class once a button is clicked to change its CSS properties
+    console.dir(e)
+    console.log(activePlayer)
+    e.target.removeEventListener('click', selectGrid)   // removes the "addeventlistener" property once the object has been clicked to no longer change the values
 
     // conditional to change players after each round
     if (activePlayer == 1) {
         activePlayer = 0
-        console.log(activePlayer)
+        console.log(`${activePlayer} active player`)
         return
     }
     
