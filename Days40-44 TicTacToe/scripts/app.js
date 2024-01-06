@@ -41,6 +41,7 @@ const startGameButton = document.getElementById('start-new-game')
 const displayGameGrid = document.getElementById('active-game')
 startGameButton.addEventListener('click', startNewGame)
 const playerFirst = document.getElementById('active-player-name')
+let gameOverSign = document.getElementById('game-over')
 
 
 

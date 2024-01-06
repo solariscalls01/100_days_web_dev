@@ -59,7 +59,7 @@ function selectGrid(e) {
 function checkGameStatus(){
     console.log(gridLength)
     if (gridLength < 2) {
-        document.getElementById('game-over').innerHTML = "GAME OVER \nPLAY AGAIN?"
+        gameOverSign.innerHTML = "GAME OVER \nPLAY AGAIN?"
         document.getElementById('game-over').removeAttribute("style")
     }
 }
