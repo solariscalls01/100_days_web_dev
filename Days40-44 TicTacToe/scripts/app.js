@@ -7,7 +7,13 @@ let getNameElement = document.getElementById('playername')
 let edittedPlayer = "0"
 
 // Create an array of objets for the players that include the name and the symbols
-let activePlayer = 0
+let activePlayer = 1
+
+const getGameBoard = [
+    [0,0,0],
+    [0,0,0],
+    [0,0,0]
+]
 
 const players = [
     {name: "",
@@ -47,7 +53,6 @@ let gameOverSign = document.getElementById('game-over')
 
 const getGridItems = document.querySelectorAll('#game-board li')    // Needs the class indicator and since we are targeting the elements AFTER the ol, we use li
 let gridLength = getGridItems.length
-console.log(gridLength)
 // Creating a for loop to add an event listener to each item. Can be done manually, but this is easier to perform task
 for (const getGridItem of getGridItems) {
     getGridItem.addEventListener('click', selectGrid)
