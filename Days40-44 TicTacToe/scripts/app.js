@@ -6,11 +6,16 @@ let getNameElement = document.getElementById('playername')
 // Creating the editted player variables to set "permanently" in the html code
 let edittedPlayer = "0"
 
-// Create an array of objets for the players that include the name and the symbols
-let activePlayer = 0
+// Create an array of objects for the players that include the name and the symbols
+let activePlayer = 1
 
-// select a random player to go first
-let randomPlayer = Math.floor(Math.random() * 2)
+
+const getGameBoard = [
+    [0,0,0],
+    [0,0,0],
+    [0,0,0]
+]
+
 const players = [
     {name: "",
     symbol: "X"},
@@ -43,10 +48,13 @@ const startGameButton = document.getElementById('start-new-game')
 const displayGameGrid = document.getElementById('active-game')
 startGameButton.addEventListener('click', startNewGame)
 const playerFirst = document.getElementById('active-player-name')
+let gameOverSign = document.getElementById('game-over')
+
+
 
 const getGridItems = document.querySelectorAll('#game-board li')    // Needs the class indicator and since we are targeting the elements AFTER the ol, we use li
-
-// Creating a for OF loop to add an event listener to each item. Can be done manually, but this is easier to perform task
+let gridLength = getGridItems.length
+// Creating a for loop to add an event listener to each item. Can be done manually, but this is easier to perform task
 for (const getGridItem of getGridItems) {
     getGridItem.addEventListener('click', selectGrid)
     // console.log(getGridItem)
