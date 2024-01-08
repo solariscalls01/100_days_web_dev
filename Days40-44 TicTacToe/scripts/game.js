@@ -83,36 +83,25 @@ function checkGameStatus(event){
     // Check the rows for win
     for (let i = 0; i < 3; i++) {
         if (getGameBoard[i][0] !== 0 && getGameBoard[i][0] === getGameBoard[i][1] && getGameBoard[i][1] === getGameBoard[i][2] && getGameBoard[i][0] === getGameBoard[i][2]) {
-            alert(`Player ${activePlayer}, ${players[activePlayer - 1].name} wins!`)
-            disableBoard()
-            resetGameBoard()
+            winMessage()
         }
     }
 
     // check the cols for win
     for (let j =0; j < 3; j++) {
         if (getGameBoard[0][j] !== 0 && getGameBoard[0][j] === getGameBoard[1][j] && getGameBoard[1][j] === getGameBoard[2][j] && getGameBoard[0][j] === getGameBoard[2][j]){
-            alert(`Player ${activePlayer}, ${players[activePlayer - 1].name} wins!`)
-            disableBoard()
-            resetGameBoard()
+            winMessage()
         }
     }
 
     // check diagnols for win
     if (getGameBoard[0][0] !== 0 && getGameBoard[0][0] === getGameBoard[1][1] && getGameBoard[1][1] === getGameBoard[2][2]) {
-        alert(`Player ${activePlayer}, ${players[activePlayer - 1].name} wins!`)
-        disableBoard()
-        resetGameBoard(); // Return the winner (X or O)
+        winMessage()
       }
       if (getGameBoard[0][2] !== 0 && getGameBoard[0][2] === getGameBoard[1][1] && getGameBoard[1][1] === getGameBoard[2][0]) {
-            alert(`Player ${activePlayer}, ${players[activePlayer - 1].name} wins!`)
-            disableBoard()
-            resetGameBoard(); // Return the winner (X or O)
-      }
-
-    
+            winMessage()
+      }   
 }
-
 function resetGameBoard() {
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
@@ -126,4 +115,10 @@ function disableBoard() {
         getGridItem.classList.add('disabled')
         getGridItem.removeEventListener('click', selectGrid)
     }
+}
+
+function winMessage() {
+    alert(`Player ${activePlayer}, ${players[activePlayer - 1].name} wins!`)
+    disableBoard()
+    resetGameBoard()
 }

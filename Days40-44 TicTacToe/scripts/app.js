@@ -6,8 +6,9 @@ let getNameElement = document.getElementById('playername')
 // Creating the editted player variables to set "permanently" in the html code
 let edittedPlayer = "0"
 
-// Create an array of objets for the players that include the name and the symbols
+// Create an array of objects for the players that include the name and the symbols
 let activePlayer = 1
+
 
 const getGameBoard = [
     [0,0,0],
