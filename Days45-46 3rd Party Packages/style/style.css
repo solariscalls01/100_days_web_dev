@@ -10,3 +10,26 @@
     object-fit: cover;
 
 }
+
+#newsletter-signup {
+    max-width: 40rem;
+    margin: 5rem auto;
+}
+
+body {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+section {
+    width: 100%;
+    max-width: 50rem;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+#main-image {
+    max-width: 150%;
+    height: 30rem;
+    object-fit: cover;
+}
