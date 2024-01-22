@@ -1,0 +1,8 @@
+nodeman package is useful for autostarting the server everytime something changes.
+ideally it's installed via:
+npm install nodemon --save-dev
+
+In order to get this to work properly, need to make an addition to the package.json in the "Script" section.
+Looking at the script, we have a "start": "nodemon app.js"
+
+then when we are in the terminal, all we need to do to run it is "npm start" as it will run that specfic script. 
