@@ -50,6 +50,12 @@
     </aside>
     <main>
       <h1>Recommended restaurants</h1>
+      
+      <!-- USING EJS TEMPLATING SYNTAX -->
+      <!-- Template format uses the < %= anyvariablenameyouwant %>  -->
+      <!-- The variable inside the syntax will be passed in the app.get, in the res.render section -->
+
+      <p>We found <%= numberofRestaurants %> restaurants.</p>
       <p>Find your next favorite restaurants with help of our other users!</p>
       <ul id="restaurants-list">
         <li class="restaurant-item">
@@ -67,7 +73,6 @@
             </div>
           </article>
         </li>
-  
       </ul>
     </main>
   </body>
