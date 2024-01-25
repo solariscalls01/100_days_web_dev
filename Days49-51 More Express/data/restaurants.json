@@ -19,5 +19,12 @@
     "cuisine": "fes",
     "website": "https://www.gogole.com",
     "description": "feas"
+  },
+  {
+    "name": "Shiguri",
+    "address": "389183 Main Street",
+    "cuisine": "Japanese",
+    "website": "https://skljfs.com",
+    "description": "Awesome food"
   }
 ]

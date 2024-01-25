@@ -58,21 +58,29 @@
       <p>We found <%= numberofRestaurants %> restaurants.</p>
       <p>Find your next favorite restaurants with help of our other users!</p>
       <ul id="restaurants-list">
-        <li class="restaurant-item">
-          <article>
-            <h2>Restaurant Title</h2>
-            <div class="restaurant-meta">
-              <p>Mexican</p>
-              <p>Address of the restaurant, including city</p>
-            </div>
-            <p>
-              A short description, explaining why this restaurant is awesome!
-            </p>
-            <div class="restaurant-actions">
-              <a href="">View Website</a>
-            </div>
-          </article>
-        </li>
+
+        <!-- USING EJS to loop to iterate through a segment of code. Using the for loop, we iterate through the restaurants.json file and use the objects to parse through the key/value pair 
+          for our loop to output the items we want. (e.g., .name, .address .website). In order to connect the restaurants object, we need to connect it in the res.render in the app.js -->
+          <!-- The setup for the loop in this case needs to be that the objects be inside the li items or articles.  -->
+        <% for (const restaurant of restaurants) { %>
+          <li class="restaurant-item">
+            <article>
+              <h2><%= restaurant.name %></h2>
+              <div class="restaurant-meta">
+              <!-- Replacing the cuisine values with the EJS format taken from our JSON file -->
+                <p><%= restaurant.cuisine  %></p>
+                <p><%= restaurant.address %></p>
+              </div>
+              <p>
+                <%= restaurant.description  %>
+              </p>
+              <div class="restaurant-actions">
+                <a href="<%=restaurant.website%>">View Website</a>
+              </div>
+            </article>
+          </li>
+        <% } %>
+
       </ul>
     </main>
   </body>

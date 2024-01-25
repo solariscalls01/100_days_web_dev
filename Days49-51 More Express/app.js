@@ -50,7 +50,7 @@ app.post("/recommend", (req, res) => {
   let fileData = fs.readFileSync(dataFilePath);
   const restaurantData = JSON.parse(fileData);
 
-  const getRestaurantLength = Object.keys(restaurantData).length
+  const getRestaurantLength = Object.keys(restaurantData).length;
 
   // Push the form information into the JSON file
   restaurantData.push(restaurant);
@@ -61,14 +61,17 @@ app.post("/recommend", (req, res) => {
   res.redirect("/confirm");
 });
 
-
-// When using the EJS templating, the 2nd parameter in the render will be the variable along with the object that you want to pass/ replace. 
+// When using the EJS templating, the 2nd parameter in the render will be the variable along with the object that you want to pass/ replace.
 app.get("/restaurants", (req, res) => {
-    let dataFilePath = path.join(__dirname, "data", "restaurants.json");
-    let fileData = fs.readFileSync(dataFilePath);
-    const restaurantData = JSON.parse(fileData);
+  let dataFilePath = path.join(__dirname, "data", "restaurants.json");
+  let fileData = fs.readFileSync(dataFilePath);
+  const restaurantData = JSON.parse(fileData);
 
-  res.render("restaurants", {numberofRestaurants: restaurantData.length});
+  // IN order to connect the restaurants object to allow looping in the restaurants.ejs section, we need to continue to add these "options" in the curly braces.
+  res.render("restaurants", {
+    numberofRestaurants: restaurantData.length,
+    restaurants: restaurantData,
+  });
 });
 
 app.get("/confirm", (req, res) => {
