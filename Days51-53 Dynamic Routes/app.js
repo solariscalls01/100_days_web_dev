@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+const PORT = 3000
+
 const express = require('express');
 
 const app = express();
@@ -26,6 +28,15 @@ app.get('/restaurants', function (req, res) {
     restaurants: storedRestaurants,
   });
 });
+
+// ADDING AND USING DYNAMIC ROUTES
+// Dynamic routing allows developers to define routes that can match a variety of patterns rather than just fixed URLs
+// Need to add the : followed by any type of identifier you want to name it. Can be anything. 
+
+app.get('/restaurants/:id', (req,res) => {
+  const restaurantID = req.params.id  // the .id comes from the :id above. if we were to have a different name say, :number, it would be req.params.number
+  res.render('restaurants-detail', {rid: restaurantID}) //key:value pair. Get's passed in the restaurant-detail.ejs section
+})
 
 app.get('/recommend', function (req, res) {
   res.render('recommend');
@@ -53,4 +64,5 @@ app.get('/about', function (req, res) {
   res.render('about');
 });
 
-app.listen(3000);
+app.listen(PORT);
+console.log("listening on " + PORT)
