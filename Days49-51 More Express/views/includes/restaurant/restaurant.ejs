@@ -1,0 +1,19 @@
+<!-- Can continue to use template "partials" to include any lines of code to essentialy prevent cluttering in our code. 
+Here we will go ahead and partial temlate our list items that can be injected into the restaurants.ejs section -->
+
+<!-- since we are using the partial templating here, we need to also add the options (2nd parameter) to link our key/value pairs. The first item "a" is the key 
+            that we used in the restaurant.ejs section (named it a just to showcase the identifiers). The value "restaurant" is coming from the for loop  -->
+<li class="restaurant-item">
+  <article>
+    <h2><%= a.name %></h2>
+    <div class="restaurant-meta">
+      <!-- Replacing the cuisine values with the EJS format taken from our JSON file -->
+      <p><%= a.cuisine %></p>
+      <p><%= a.address %></p>
+    </div>
+    <p><%= a.description %></p>
+    <div class="restaurant-actions">
+      <a href="<%=a.website%>">View Website</a>
+    </div>
+  </article>
+</li>
