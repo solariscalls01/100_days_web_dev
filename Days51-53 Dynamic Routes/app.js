@@ -54,8 +54,7 @@ app.get('/restaurants/:id', (req,res) => {
       // that gets passed in the ejs. 
     }
   }
-
-
+  res.render("404")
 })
 
 app.get('/recommend', function (req, res) {
@@ -67,6 +66,7 @@ app.post('/recommend', function (req, res) {
   
   // The .id technically does not exist, but JS automatically creates these values if they do not exist. But this section allows us to generate numerical id's for our list items
   // everytime a new form is posted. Requires the 3rd party app "uuid"
+
   restaurant.id = UID.v4();
   console.dir(req)
   const filePath = path.join(__dirname, 'data', 'restaurants.json');
@@ -88,6 +88,13 @@ app.get('/confirm', function (req, res) {
 app.get('/about', function (req, res) {
   res.render('about');
 });
+
+
+// IN DEALING WITH ROUTING ERRORS, we want to use "middleware", in this case app.use that reroutes users to our custom 404 page in the event the path is incorrect
+// This needs to be placed at the bottom. Because the route starts from top to bottom and if the specific get wasn't found, it will reach this section and return the 404
+app.use((req,res) => {
+  res.render('404')
+})
 
 app.listen(PORT);
 console.log("listening on " + PORT)
