@@ -96,5 +96,10 @@ app.use((req,res) => {
   res.render('404')
 })
 
+// When using error codes, the formatting needs to have 4 parameters in the function in this order. 
+app.use((err,req,res,next) => {
+  res.render('500')
+})
+
 app.listen(PORT);
 console.log("listening on " + PORT)
