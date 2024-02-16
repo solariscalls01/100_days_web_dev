@@ -14,6 +14,15 @@
       <% } else { %>
         <p>Find your next favorite restaurants with help of our other users!</p>
         <p>We found <%= numberOfRestaurants %> restaurants.</p>
+        
+        <!-- Section to create the sort for restaurants --> 
+        <!-- action needs to be set to the page that is being sorted. in this case we are sorting the restaurants. And since we are not posting anything to the site, we want to GET instead 
+        of POST  -->
+        <form action="/restaurants" method="GET">
+          <!-- we set the type to hidden to hide the input text bar. The value can be changed dynamically using the EJS templating. The value comes from the restaurant.js section -->
+          <input type="hidden" value="<%= nextOrder %>" name="order"> 
+          <button class="btn">Change Order</button>
+        </form>
         <ul id="restaurants-list">
           <% for (const restaurant of restaurants) { %>
             <%- include('includes/restaurants/restaurant-item', {restaurant: restaurant }) %>
@@ -22,4 +31,4 @@
       <% } %>
     </main>
   </body>
-</html>
+</html> 
