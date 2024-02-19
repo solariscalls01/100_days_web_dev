@@ -3,6 +3,7 @@
 
 function greetUser(userName = "brian") {
   console.log("hi there, " + userName);
+  console.log(`Hi there ${userName}`)   // using template literals
 }
 
 greetUser("Dave"); //outputs Hi there Dave
