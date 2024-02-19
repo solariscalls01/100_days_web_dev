@@ -16,8 +16,6 @@ class Job {
     describe() {
         console.log(`I'm a ${this.title} and work at ${this.location} and earn ${this.salary}`)
     }
-
-
 }
 
 // After creating the class, you need to initialize it using the "new" keyword.
@@ -29,3 +27,5 @@ console.log(chef)           // output: Job { title: 'chef', location: 'LA', sala
 
 developer.describe()        // output: I'm at Developer and work at NY and earn 50000
 chef.describe()             // output: I'm a chef and work at LA and earn 25000
+
+ 
