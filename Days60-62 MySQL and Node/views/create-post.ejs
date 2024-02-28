@@ -1,37 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <%- include('includes/head', { title: 'Add new post' }) %>
+    <link rel="stylesheet" href="/styles/forms.css" />
+  </head>
 
-<head>
-  <%- include('includes/head', { title: 'Add new post' }) %>
-  <link rel="stylesheet" href="/styles/forms.css">
-</head>
+  <body>
+    <%- include('includes/header') %>
+    <main>
+      <h1>Add a new post</h1>
+      <!-- REMINDER. the action is the path you want to go after your method. The METHOD is the GET/POST  -->
+      <form action="/posts" method="POST">
+        <div class="form-control">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" required />
+        </div>
+        <div class="form-control">
+          <label for="summary">Summary</label>
+          <input
+            type="text"
+            id="summary"
+            name="summary"
+            required
+            maxlength="255"
+          />
+        </div>
+        <div class="form-control">
+          <label for="content">Post Content</label>
+          <textarea id="content" name="content" required rows="5"></textarea>
+        </div>
+        <div class="form-control">
+          <label for="author">Select Author</label>
+          <!-- SECTION TO DISPLAY THE "SELECT AUTHOR" in the new-post page. In order to loop through all the names, we use EJS templating and the for loop -->
+          <select id="author" name="author">
+            <!-- the author is the name of our choice, but the name comes from the blog.js, where we create the object from the router.get('/new-post') section.
+          We want to loop through the items in order to display each one for our dropdown. REMEMBER, the name is the "key" from the key/value pair    -->
+            <% for(const author of name) { %>
 
-<body>
-  <%- include('includes/header') %>
-  <main>
-    <h1>Add a new post</h1>
-    <form action="..." method="...">
-      <div class="form-control">
-        <label for="title">Title</label>
-        <input type="text" id="title" name="title" required>
-      </div>
-      <div class="form-control">
-        <label for="summary">Summary</label>
-        <input type="text" id="summary" name="summary" required maxlength="255">
-      </div>
-      <div class="form-control">
-        <label for="content">Post Content</label>
-        <textarea id="content" name="content" required rows="5"></textarea>
-      </div>
-      <div class="form-control">
-        <label for="author">Select Author</label>
-        <select id="author" name="author">
-          ...
-        </select>
-      </div>
-      <button class="btn">Add Post</button>
-    </form>
-  </main>
-</body>
-
+            <!-- We set the value mainly for the backend portion for the developers to see. Frontend does not display this value, and one items between the option tags 
+            are what the frontend displays -->
+            <option value="<%= author.id %>"><%=author.name%></option>
+            <% } %>
+          </select>
+        </div>
+        <button class="btn">Add Post</button>
+      </form>
+    </main>
+  </body>
 </html>

@@ -2,6 +2,8 @@ const path = require('path');
 
 const express = require('express');
 
+const PORT = 32003;
+
 const blogRoutes = require('./routes/blog');
 
 const app = express();
@@ -22,4 +24,5 @@ app.use(function (error, req, res, next) {
   res.status(500).render('500');
 });
 
-app.listen(3000);
+app.listen(PORT);
+console.log(`Listening on ${PORT}`)
