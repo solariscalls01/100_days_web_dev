@@ -1,7 +1,11 @@
+<!-- The EJS items are from the posts-list section. Particularly on line 20 where the "includes".   -->
+
+<!-- We are able to use these attributes as we got the key/value pair from the posts-lists from the ejs for loop section.  -->
 <article class="post-item">
-  <h2>...</h2>
-  <p class="post-item-author">By ...</p>
-  <p>...</p>
+  <h2><%= item.title  %></h2>
+  <p class="post-item-author">By <%=item.author_name  %></p>
+  <p><%=item.summary  %></p>
+  <p><%= item.content %></p>
   <div class="post-actions">
     <button class="btn btn-alt">Delete Post</button>
     <a href="...">Edit Post</a>

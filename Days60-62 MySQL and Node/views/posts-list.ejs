@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <%- include('includes/head', { title: 'All Posts' }) %>
+    <link rel="stylesheet" href="/styles/posts.css" />
+  </head>
 
-<head>
-  <%- include('includes/head', { title: 'All Posts' }) %>
-  <link rel="stylesheet" href="/styles/posts.css">
-</head>
+  <body>
+    <%- include('includes/header') %>
+    <main id="all-posts">
+      <h1>All Posts</h1>
+      <!-- We create a conditional statement here, where if we did not have any posts in our DB, we generate the if statement to allow a user to create a post -->
+      <% if (!posts || posts.length === 0) { %>
+      <p>No posts found. Create some!</p>
+      <a class="btn" href="/new-post">Create a new Posts</a>
+      <% } else { %>
+      <ol id="posts-list">
+        <!-- WE Loop through each of the individual posts query that we got from blog.js. the "post" is the variable we set and posts are the values we are iterating through -->
+        <% for(const post of posts) { %>
 
-<body>
-  <%- include('includes/header') %>
-  <main id="all-posts">
-    <h1>All Posts</h1>
-   
-  </main> 
-</body>
-
+          <!-- Again using EJS templating. we are passing the key/value pair where the value in this case is the post and the "item" is the key that will be used in the post-item section  -->
+        <li><%- include('includes/post-item', {item: post}) %></li>
+        <% } %>
+      </ol>
+      <% } %>
+    </main>
+  </body>
 </html>

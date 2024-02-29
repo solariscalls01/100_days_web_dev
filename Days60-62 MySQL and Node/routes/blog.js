@@ -6,9 +6,22 @@ router.get("/", (req, res) => {
   res.redirect("/posts");
 });
 
-router.get("/posts", (req, res) => {
-  res.render("posts-list"); // no need to add the .ejs as express just looks for the name
+// FETCHING DATA from SQL DB
+router.get("/posts", async (req, res) => {
+  // We created the query variable just for ease of use. Can also be performed as before where we use db.query("... query command")
+  // Because we wanted to not just get the posts items, we also wanted to join the author name as well with the posts. 
+  const query = `
+  SELECT post.*, authors.name AS author_name FROM blog.post 
+  INNER JOIN authors on post.author_id = authors.id;`
+
+  // We destructure the query items to be used in the posts-list.ejs file
+  const [post] = await db.query(query)
+  console.log(post)
+
+  // reminder. The value in post is what we got from the const[post]. The key can be whatever we want. The {posts: post} is what allows us to use the ejs templating for the posts-list.ejs
+  res.render("posts-list", {posts: post});      
 });
+
 
 // AFTER creating our database.js file, we need to import it. After setting up the constant for our db, we can now query our searches/ results.
 // BECAUSE the db is asynchronous, best practice is to use the async and await functions.
@@ -28,6 +41,7 @@ router.get("/new-post", async (req, res) => {
   res.render("create-post", { name: names }); // remember, the key in this section can be "whatever you want it to be", and the value comes from the object or constant that we created.
 });
 
+// SECTION FOR POSTING ITEMS TO A DB
 router.post("/posts", async (req, res) => {
   const body = req.body; // Will hold the incoming data
   // In order to extract the data from the input files, we gotta take the objects from the body. If you console.log, you will see that we can extract the title, summary, content, author.
