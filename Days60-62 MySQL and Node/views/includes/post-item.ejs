@@ -2,13 +2,23 @@
 
 <!-- We are able to use these attributes as we got the key/value pair from the posts-lists from the ejs for loop section.  -->
 <article class="post-item">
-  <h2><%= item.title  %></h2>
-  <p class="post-item-author">By <%=item.author_name  %></p>
-  <p><%=item.summary  %></p>
+  <h2><%= item.title %></h2>
+  <p class="post-item-author">By <%=item.author_name %></p>
+  <p><%=item.summary %></p>
   <p><%= item.content %></p>
+
+  
   <div class="post-actions">
-    <button class="btn btn-alt">Delete Post</button>
-    <a href="...">Edit Post</a>
-    <a class="btn" href="...">View Post</a>
+    <!-- DELETING a POST. We created the form and placed the button within the form so that when we submit, it performs an action. The form action value MUST match the 
+    router.post (/posts/:id/delete) from the blog.js delete section otherwise it will not work properly  -->
+    <form action="/posts/<%= item.id %>/delete" method="POST">
+
+      <button class="btn btn-alt">Delete Post</button>
+    </form>
+    <!-- Creating the link for the update section -->
+    <a href="/posts/<%= item.id %>/edit">Edit Post</a>
+
+    <!-- In order to access each individual posts, we want to use dynamic link to generate the ID. We use templating to access the values and get the ID. -->
+    <a class="btn" href="/posts/<%=item.id  %>">View Post</a>
   </div>
 </article>

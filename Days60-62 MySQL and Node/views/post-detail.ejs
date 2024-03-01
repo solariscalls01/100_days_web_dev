@@ -2,20 +2,26 @@
 <html lang="en">
 
 <head>
-  <%- include('includes/head', { title: 'Post title' }) %>
+  <%- include('includes/head', { title: post.title }) %>
   <link rel="stylesheet" href="/styles/posts.css">
 </head>
 
 <body>
   <%- include('includes/header') %>
   <main id="post-detail">
-    <h1>...</h1>
+    <h1><%= post.title %></h1>
+    <h2><%= post.summary %></h2>
     <section id="post-meta">
-      ...
+      <!-- ADDRESS is just another labeling component. Helps with accessability. Not technically required.  -->
+
+      <address><a href="mailto: <%= post.author_email %>"> <%= post.author_name %></a> |</address>
+      
+      <!-- Getting the date and time from our DB. the <time> is primarily used for accessability  -->
+      <time datetime="<%= post.date %>"><%= post.humanReadableDate%></time>
     </section>
     <hr>
     <section>
-      <p id="body">...</p>
+      <p id="body"><%= post.body %></p>
     </section>
   </main>
 </body>

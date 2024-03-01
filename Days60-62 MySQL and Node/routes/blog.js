@@ -6,7 +6,9 @@ router.get("/", (req, res) => {
   res.redirect("/posts");
 });
 
+//////////////////////////////
 // FETCHING DATA from SQL DB
+//////////////////////////////
 router.get("/posts", async (req, res) => {
   // We created the query variable just for ease of use. Can also be performed as before where we use db.query("... query command")
   // Because we wanted to not just get the posts items, we also wanted to join the author name as well with the posts. 
@@ -41,7 +43,9 @@ router.get("/new-post", async (req, res) => {
   res.render("create-post", { name: names }); // remember, the key in this section can be "whatever you want it to be", and the value comes from the object or constant that we created.
 });
 
+//////////////////////////////
 // SECTION FOR POSTING ITEMS TO A DB
+//////////////////////////////
 router.post("/posts", async (req, res) => {
   const body = req.body; // Will hold the incoming data
   // In order to extract the data from the input files, we gotta take the objects from the body. If you console.log, you will see that we can extract the title, summary, content, author.
@@ -66,5 +70,86 @@ console.log(data)
   );
   res.redirect("/posts");
 });
+
+//////////////////////////////
+// SECTION FOR VIEWING POST
+//////////////////////////////
+
+// IN ORDER TO get the dynamic routing for the IDs, we have to use the ":". The variable after it can be whatever we want to name it. In this case since we want the id, we use id. 
+router.get("/posts/:id", async (req,res) => {
+  const query = `select post.*, authors.name AS author_name, authors.email AS author_email 
+  from post inner join authors on post.author_id = authors.id where post.id = (?)`;
+
+  // In order to get the ids, we want to use the req.params, which allows us to get the id value. The .params.id gets whatever parameter value. From the post-item.ejs section with the "view post"
+  // We had set the ejs to get the ID value from our database, which then creates or links the :id to that specific number. We again use the req.params.(name we set in this case :id) to get that
+  // specific value. Another example, if we set posts/:sid, we use req.params.sid to match.  
+  // console.log(req.params.id)
+
+  // remember, we set the array for the 2nd parameter to pair with the ? query. Using destructuring, the req.params.id gets the id result, which is from the :id at the get requests
+  const [posts] = await db.query(query, [req.params.id])
+  // console.log([posts[0]])
+
+  // Using Spread Operator to break down each of the posts[0] items individually. Also creating new date objects to make it more easier to read. 
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString
+  const postData = {
+    ...posts[0],
+    date: posts[0].date.toISOString(),
+    humanReadableDate: posts[0].date.toLocaleString('en-US', {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    })
+  }
+
+  console.log(postData)
+
+  // if the posts does not exists, we want to generate an error statement
+
+  if (!posts || posts.length === 0) {
+    return res.status(404).render('404')
+  }
+  
+  // sending our key/value pair to post-detail.ejs. 
+  res.render('post-detail', {post: postData})
+})
+
+//////////////////////////////
+// SECTION FOR EDITING POSTS
+//////////////////////////////
+
+router.get('/posts/:id/edit', async (req,res) => {
+  const query = `
+  SELECT * from post where id = ?`;
+
+  const [post] = await db.query(query, [req.params.id])
+
+  if (!post || post.length === 0) {
+    res.status(400).render('404')
+  }
+  res.render('update-post', {post: post[0]})
+})
+
+// SECTION for UPDATE POST button. Now we need to "post". We generate the query again using the UPDATE SQL code syntax. We set the values to ? and in the query, each array corresponds
+// to the question mark in play. 
+router.post('/posts/:id/edit', async (req,res) => {
+  const query = `UPDATE post SET title = ?, summary = ?, body = ? WHERE id = ?`;
+  
+  await db.query(query, [req.body.title, req.body.summary, req.body.content, req.params.id])
+
+  // no need to render. Since we queried the item with the items we want to type into the new box, after clicking the update post button, it runs the 2 lines above. Afterwards , just want to
+  // redirect to the posts page. 
+  res.redirect('/posts')
+})
+
+//////////////////////////////
+// SECTION FOR DELETING AN ITEM
+//////////////////////////////
+
+// similar to the edit, but much easier. Just run the SQL query for delete where you want to match the post id. 
+router.post('/posts/:id/delete', async(req,res) => {
+  await db.query(`DELETE from post where id = ?`, [req.params.id])
+  res.redirect('/posts')
+})
 
 module.exports = router;
